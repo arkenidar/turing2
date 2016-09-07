@@ -10,7 +10,7 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 
 Links:
-https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
-https://pragprog.com/magazines/2012-03/the-nor-machine
-http://pp.ipd.kit.edu/firm/
-http://prize.hutter1.net/
+* https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
+* https://pragprog.com/magazines/2012-03/the-nor-machine
+* http://pp.ipd.kit.edu/firm/
+* http://prize.hutter1.net/
