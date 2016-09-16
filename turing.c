@@ -29,10 +29,16 @@ int current_op=0;
 #define IN 2
 //for(int n=0; 1; n++, n%=2)printf("%d", n);//similar program, optimized
 */
-int nor_op(int a, int b) { return a==0&&b==0?1:0; }
-int nor_mapping[][3] = {{1,2,2},{0,2,2}};
-int paths[][2] = {{1,1},{0,-1}};
-int memory[]={0,0,0};
+bit nor_op(bit a, bit b) { return a==0&&b==0?1:0; }
+
+typedef char bit;
+typedef char byte;
+
+bit memory[]={0,0,0};
+// constant addresses, variable addresses, indirect addresses ???
+byte nor_mapping[][3] = {{1,2,2},{0,2,2}};
+byte paths[][2] = {{1,1},{0,-1}};
+
 int current_op=0;
 #define EXIT -1
 #define PATH_CHOOSER 0
@@ -58,6 +64,8 @@ int perform_operation(){
 }
 void path_choice(){ current_op=paths[current_op][memory[PATH_CHOOSER]];}
 int main(int argc, char **argv) {
+	if(sizeof char > 1) printf("bigger char type!\n");
+	
 	while(1){
 		if(perform_operation()==1) printf("%d", memory[OUT]);
 		path_choice(); if(current_op==EXIT) break;
