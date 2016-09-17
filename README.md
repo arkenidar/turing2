@@ -11,6 +11,9 @@ with Turing completeness.
 
 Links:
 * https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
+* 
 * https://pragprog.com/magazines/2012-03/the-nor-machine
 * http://pp.ipd.kit.edu/firm/
+* 
 * http://prize.hutter1.net/
+* https://www.infoq.com/news/2016/09/facebook-zstandard-compression
