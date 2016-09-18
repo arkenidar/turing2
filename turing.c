@@ -2,11 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-typedef struct {
-	char data:1;
-} bit_type;
-
-bit_type memory[] = {{0},{0},{0},{0}};
+char memory[] = {0,0,0,0};
 
 char nor_op(char a, char b){
 	return a==0 && b==0 ? 1:0;
@@ -26,11 +22,11 @@ long current_op = 0;
 
 instruction_type instructions[] =  { 
 	{ {OUT, IN, IN}, {1,1} },
-	{ {PATH_CHOOSER, IN, IN}, {0,EXIT} }
+	{ {PATH_CHOOSER, IN, IN}, {0, EXIT} }
 };
 
 int getbit(){
-	char ch = getche();
+	char ch = _getche();
 	if (ch=='0' || ch=='1') return ch-'0';
 	else if (ch=='q') exit(0);
 	else return -1;
@@ -39,26 +35,26 @@ int getbit(){
 int getinput(long* mapping, int index){
 	if(mapping[index]==IN) {
 		int out; while( (out=getbit()) == -1 ){
-			printf(".insert bit or quit.");
+			printf(" !insert bit or quit! ");
 		}
-		memory[mapping[index]].data = out;
+		memory[mapping[index]] = out;
 	}
-	return memory[mapping[index]].data==0?0:1;
+	return memory[mapping[index]];
 }
 
 void perform_operation(){
 	instruction_type instruction = instructions[current_op];
-	memory[instruction.mapping[0]].data = nor_op(
+	memory[instruction.mapping[0]] = nor_op(
 		getinput(instruction.mapping, 1),
 		getinput(instruction.mapping, 2)
 	);
-	if(instruction.mapping[0]==OUT)printf("%d",memory[OUT].data==0?0:1);
+	if(instruction.mapping[0]==OUT)printf("%d",memory[OUT]);
 }
 
 void path_choice(){
 	instruction_type instruction = instructions[current_op];
 	current_op = instruction.paths[
-		memory[PATH_CHOOSER].data==0?0:1
+		(int) memory[PATH_CHOOSER]
 	];
 }
 
