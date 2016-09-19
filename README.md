@@ -10,6 +10,8 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 
 Links:
+* https://en.wikipedia.org/wiki/Turing_machine
+* 
 * https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
 * https://en.wikipedia.org/wiki/One_instruction_set_computer
 * 
