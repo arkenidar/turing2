@@ -15,6 +15,7 @@ Links:
 * 
 * https://pragprog.com/magazines/2012-03/the-nor-machine
 * http://pp.ipd.kit.edu/firm/
+* https://en.wikipedia.org/wiki/1-bit_architecture
 * 
 * http://prize.hutter1.net/
 * https://www.infoq.com/news/2016/09/facebook-zstandard-compression
