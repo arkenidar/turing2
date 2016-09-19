@@ -10,10 +10,19 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 
 Links:
+* https://en.wikipedia.org/wiki/Theory_of_computation
+* https://en.wikipedia.org/wiki/Alan_Turing
+* https://en.wikipedia.org/wiki/Turing_machine
+* 
 * https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
+* https://en.wikipedia.org/wiki/One_instruction_set_computer
 * 
 * https://pragprog.com/magazines/2012-03/the-nor-machine
 * http://pp.ipd.kit.edu/firm/
+* https://en.wikipedia.org/wiki/1-bit_architecture
 * 
 * http://prize.hutter1.net/
 * https://www.infoq.com/news/2016/09/facebook-zstandard-compression
+* 
+* https://en.wikipedia.org/wiki/Turing_tarpit
+
