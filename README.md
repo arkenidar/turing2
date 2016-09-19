@@ -10,6 +10,7 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 
 Links:
+* https://en.wikipedia.org/wiki/Theory_of_computation
 * https://en.wikipedia.org/wiki/Alan_Turing
 * https://en.wikipedia.org/wiki/Turing_machine
 * 
