@@ -19,6 +19,6 @@ Links:
 * 
 * http://prize.hutter1.net/
 * https://www.infoq.com/news/2016/09/facebook-zstandard-compression
-*
+* 
 * https://en.wikipedia.org/wiki/Turing_tarpit
 
