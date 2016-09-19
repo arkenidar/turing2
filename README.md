@@ -11,6 +11,7 @@ with Turing completeness.
 
 Links:
 * https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
+* https://en.wikipedia.org/wiki/One_instruction_set_computer
 * 
 * https://pragprog.com/magazines/2012-03/the-nor-machine
 * http://pp.ipd.kit.edu/firm/
