@@ -1,5 +1,5 @@
-# turing2
-turing.c : turing.c : a reduced design for a modified Turing Machine (minimal, modern, turing completess)
+# RedTM
+RedTM : a reduced design for a modified Turing Machine (minimal, modern, turing completess)
 
 This is Software Code in "C" programming language for a Turing Machine
 automaton with non-sequential memory access for RAMs in place 
