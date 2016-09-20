@@ -1,6 +1,6 @@
 Supported build methods:
 
-* GNU Makefile (GNU "make" command)
-* Geany IDE
-* CodeBlocks IDE (project file)
-* VisualStudio IDE (solution file)
+* GNU Makefile (GNU "make" command) [Multi-platform & CLI & little-fast-simple]
+* Geany IDE [Multi-platform & GUI & little-fast-simple]
+* CodeBlocks IDE (project file) [Multi-platform & GUI & big-slow-complex]
+* VisualStudio IDE (solution file) [Windows-only & GUI & big-slow-complex]
