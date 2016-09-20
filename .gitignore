@@ -1,6 +1,13 @@
 
+# Windows build
 turing.exe
+
+# VisualStudio
 *.filters
+
+# CodeBlocks
+*.depend
+*.layout
 
 #https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
