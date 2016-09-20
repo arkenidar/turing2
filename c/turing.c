@@ -20,7 +20,7 @@ typedef struct {
 #define EXIT -1
 long current_op = 0;
 
-instruction_type instructions[] =  { 
+instruction_type instructions[] =  {
 	{ {OUT, IN, IN}, {1,1} },
 	{ {PATH_CHOOSER, IN, IN}, {0, EXIT} }
 };
@@ -28,7 +28,10 @@ instruction_type instructions[] =  {
 int getbit(){
 	char ch = _getche();
 	if (ch=='0' || ch=='1') return ch-'0';
-	else if (ch=='q') exit(0);
+	else if (ch=='q'){
+		printf(" OM ");
+		exit(0);
+	}
 	else return -1;
 }
 
@@ -59,12 +62,17 @@ void path_choice(){
 }
 
 int main(int argc, char **argv) {
-	
+
+	printf(" OM ");
+
 	while(1){
-		if(current_op==EXIT) break;
+		if(current_op==EXIT){
+			printf(" OM ");
+			break;
+		}
 		perform_operation();
 		path_choice();
 	}
-	
+
 	return 0;
 }
