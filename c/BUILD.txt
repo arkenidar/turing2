@@ -1,0 +1,6 @@
+Supported build methods:
+
+* GNU Makefile (GNU "make" command)
+* Geany IDE
+* CodeBlocks IDE (project file)
+* VisualStudio IDE (solution file)
