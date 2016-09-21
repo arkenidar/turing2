@@ -10,6 +10,11 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 Control flow is graph-based (like in libfirm). but here has been applied a reduction also, without limiting the turing-completeness expressivity.
 
+Historical notes:
+The Hutter compression challenge made me think in stimulating ways about programs and posed a challenge which motivated my pursuit for understanding what intelligence, even in machines, is.
+During the years many side-tracks were born and the exploration path has proved to me to be noteworthy.
+Even if at present time I have not yet formulated an Hutter Challenge solution in terms of the shorter RedTM program code that produces the "goal data" (decompression, fine tuned algorithmically).
+
 Links:
 * http://scottberkun.com/2013/ten-myths-of-innnovation/
 * 
