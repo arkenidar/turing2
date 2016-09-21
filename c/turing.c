@@ -25,6 +25,16 @@ typedef struct {
 #define EXIT -1
 long current_op = 0;
 
+/* demo list:
+- use "program selector" to select which program to run in the RTM
+* demo1
+* pipe
+* not
+* or
+* and
+* nand
+*/
+
 // simple program "demo1"
 instruction_type instructions_demo1[] =	{
 	{ {OUT, IN, IN}, {1,1} },
@@ -97,6 +107,8 @@ instruction_type instructions_nand[] =	{
 	{ {OUT, BASE3, BASE3+1}, {EXIT,EXIT} }
 };
 
+// "program selector"
+// - use "program selector" to select which program to run in the RTM
 instruction_type* instructions = instructions_nand;
 
 int getbit(){
