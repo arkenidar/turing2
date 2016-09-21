@@ -124,7 +124,7 @@ int getbit(){
 int getinput(long* mapping, int index){
 	if(mapping[index]==IN) {
 		int out; while( (out=getbit()) == -1 ){
-			printf(" !insert bit or quit! ");
+			printf(" !insert bit (type '0' or '1') or quit! (type 'q') ");
 		}
 		memory[mapping[index]] = out;
 	}
