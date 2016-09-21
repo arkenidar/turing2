@@ -55,18 +55,47 @@ instruction_type instructions_or[] =	{
 #define BASE2 AND_OUT1+1
 #define AND_OUT2 BASE2+2
 instruction_type instructions_and[] =	{
+	
+	// NOT(X)
 	{ {BASE, COPY, IN}, {1,1} },
 	{ {BASE+1, COPY, BASE}, {2,2} },
 	{ {AND_OUT1, BASE, BASE+1}, {3,3} },
 	
+	// NOT(Y)
 	{ {BASE2, COPY, IN}, {4,4} },
 	{ {BASE2+1, COPY, BASE2}, {5,5} },
 	{ {AND_OUT2, BASE2, BASE2+1}, {6,6} },
 	
+	// OUT = AND(X,Y) = NOR(NOT(X), NOT(Y))
 	{ {OUT, AND_OUT1, AND_OUT2}, {EXIT,EXIT} }
 };
 
-instruction_type* instructions = instructions_and;
+// simple program "nand"
+#define AND_OUT1 BASE+2
+#define BASE2 AND_OUT1+1
+#define AND_OUT2 BASE2+2
+#define BASE3 AND_OUT2+1
+instruction_type instructions_nand[] =	{
+	
+	// NOT(X)
+	{ {BASE, COPY, IN}, {1,1} },
+	{ {BASE+1, COPY, BASE}, {2,2} },
+	{ {AND_OUT1, BASE, BASE+1}, {3,3} },
+	
+	// NOT(Y)
+	{ {BASE2, COPY, IN}, {4,4} },
+	{ {BASE2+1, COPY, BASE2}, {5,5} },
+	{ {AND_OUT2, BASE2, BASE2+1}, {6,6} },
+	
+	// BASE3 = AND(X,Y) = NOR(NOT(X), NOT(Y))
+	{ {BASE3, AND_OUT1, AND_OUT2}, {7,7} },
+	
+	// OUT = NAND(X,Y) = NOT(AND(X,Y)) = NOT(BASE3)
+	{ {BASE3+1, COPY, BASE3}, {8,8} },
+	{ {OUT, BASE3, BASE3+1}, {EXIT,EXIT} }
+};
+
+instruction_type* instructions = instructions_nand;
 
 int getbit(){
 	char ch = _getche();
