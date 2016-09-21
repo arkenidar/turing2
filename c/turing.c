@@ -43,7 +43,30 @@ instruction_type instructions_not[] =	{
 	{ {OUT, BASE, BASE+1}, {EXIT,EXIT} }
 };
 
-instruction_type* instructions = instructions_not;
+// simple program "or"
+instruction_type instructions_or[] =	{
+	{ {BASE, IN, IN}, {1,1} },
+	{ {BASE+1, COPY, BASE}, {2,2} },
+	{ {OUT, BASE, BASE+1}, {EXIT,EXIT} }
+};
+
+// simple program "and"
+#define AND_OUT1 BASE+2
+#define BASE2 AND_OUT1+1
+#define AND_OUT2 BASE2+2
+instruction_type instructions_and[] =	{
+	{ {BASE, COPY, IN}, {1,1} },
+	{ {BASE+1, COPY, BASE}, {2,2} },
+	{ {AND_OUT1, BASE, BASE+1}, {3,3} },
+	
+	{ {BASE2, COPY, IN}, {4,4} },
+	{ {BASE2+1, COPY, BASE2}, {5,5} },
+	{ {AND_OUT2, BASE2, BASE2+1}, {6,6} },
+	
+	{ {OUT, AND_OUT1, AND_OUT2}, {EXIT,EXIT} }
+};
+
+instruction_type* instructions = instructions_and;
 
 int getbit(){
 	char ch = _getche();
