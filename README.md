@@ -17,6 +17,7 @@ Links:
 * https://en.wikipedia.org/wiki/Turing_machine
 * 
 * https://en.wikipedia.org/wiki/Minimal_instruction_set_computer
+* http://www.instructables.com/id/NOR-as-Universal-Gate/
 * https://en.wikipedia.org/wiki/One_instruction_set_computer
 * 
 * https://pragprog.com/magazines/2012-03/the-nor-machine

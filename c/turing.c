@@ -36,6 +36,8 @@ instruction_type instructions_pipe[] =	{
 	{ {OUT, COPY, IN}, {EXIT,EXIT} }
 };
 
+// http://www.instructables.com/id/NOR-as-Universal-Gate/
+
 // simple program "not"
 instruction_type instructions_not[] =	{
 	{ {BASE, COPY, IN}, {1,1} },
