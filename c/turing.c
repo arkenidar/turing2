@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-char memory[] = {0,0,0,0};
+char memory[] = {0,0,0,0,0,0,0,0,0,0};
 
 char nor_op(char a, char b){
 	return a==0 && b==0 ? 1:0;
@@ -13,12 +13,15 @@ typedef struct {
 	long paths[2];
 } instruction_type;
 
+// reserved
 #define PATH_CHOOSER 0
 #define OUT 1
 #define IN 2
 #define COPY 3
-#define FIRST_UNRESERVED 4
+// first unreserved
+#define BASE 4
 
+// reserved
 #define EXIT -1
 long current_op = 0;
 
@@ -33,7 +36,14 @@ instruction_type instructions_pipe[] =	{
 	{ {OUT, COPY, IN}, {EXIT,EXIT} }
 };
 
-instruction_type* instructions = instructions_pipe;
+// simple program "not"
+instruction_type instructions_not[] =	{
+	{ {BASE, COPY, IN}, {1,1} },
+	{ {BASE+1, COPY, BASE}, {2,2} },
+	{ {OUT, BASE, BASE+1}, {EXIT,EXIT} }
+};
+
+instruction_type* instructions = instructions_not;
 
 int getbit(){
 	char ch = _getche();
