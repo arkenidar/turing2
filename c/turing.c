@@ -17,13 +17,13 @@ typedef struct {
 #define OUT 1
 #define IN 2
 #define COPY 3
-#defien FIRST_UNRESERVED 4
+#define FIRST_UNRESERVED 4
 
 #define EXIT -1
 long current_op = 0;
 
 // simple program "demo1"
-instruction_type instructions[] =	{
+instruction_type instructions_demo1[] =	{
 	{ {OUT, IN, IN}, {1,1} },
 	{ {PATH_CHOOSER, IN, IN}, {0, EXIT} }
 };
@@ -32,6 +32,8 @@ instruction_type instructions[] =	{
 instruction_type instructions_pipe[] =	{
 	{ {OUT, COPY, IN}, {EXIT,EXIT} }
 };
+
+instruction_type* instructions = instructions_pipe;
 
 int getbit(){
 	char ch = _getche();
