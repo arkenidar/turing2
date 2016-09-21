@@ -8,6 +8,7 @@ of magnetic tapes and a single, universal, NOR operation
 (law of parsimony). This is a "Turing complete" system, possibly 
 one of the set of minimal designs for doing computations
 with Turing completeness.
+Control flow is graph-based (like in libfirm). but here has been applied a reduction also, without limiting the turing-completeness expressivity.
 
 Links:
 * http://scottberkun.com/2013/ten-myths-of-innnovation/
