@@ -41,6 +41,13 @@ instruction_type instructions_demo1[] =	{
 	{ {PATH_CHOOSER, IN, IN}, {0, EXIT} }
 };
 
+// simple program "demo2"
+instruction_type instructions_demo2[] =	{
+	{ {PATH_CHOOSER, COPY, IN}, {1,2} },
+	{ {OUT, 0, 0}, {2,1} },
+	{ {OUT, 0, PATH_CHOOSER}, {0, 0} }
+};
+
 // simple program "pipe"
 instruction_type instructions_pipe[] =	{
 	{ {OUT, COPY, IN}, {EXIT,EXIT} }
@@ -109,7 +116,7 @@ instruction_type instructions_nand[] =	{
 
 // "program selector"
 // - use "program selector" to select which program to run in the RTM
-instruction_type* instructions = instructions_nand;
+instruction_type* instructions = instructions_demo2;
 
 int getbit(){
 	char ch = _getche();
@@ -156,7 +163,7 @@ int main(int argc, char **argv) {
 	printf(" { ");
 
 	while(1){
-		if(current_op==EXIT){
+		if(current_op== EXIT){
 			printf(" } ");
 			break;
 		}
