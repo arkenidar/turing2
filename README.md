@@ -16,6 +16,7 @@ During the years many side-tracks were born and the exploration path has proved 
 Even if at present time I have not yet formulated an Hutter Challenge solution in terms of the shorter RedTM program code that produces the "goal data" (decompression, fine tuned algorithmically).
 
 Possible future developments:
+- code morphing for efficiency and/or security
 - data compression (links below)
 - VHDL for HW-based RedTM
 - software VM for running all kinds of computations (simulation of hardware and software)
@@ -37,6 +38,8 @@ Links:
 * http://pp.ipd.kit.edu/firm/
 * https://en.wikipedia.org/wiki/1-bit_architecture
 * 
+* https://en.wikipedia.org/wiki/Code_morphing
+*
 * http://prize.hutter1.net/
 * https://www.infoq.com/news/2016/09/facebook-zstandard-compression
 * 
