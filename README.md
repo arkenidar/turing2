@@ -10,12 +10,17 @@ one of the set of minimal designs for doing computations
 with Turing completeness.
 Control flow is graph-based (like in libfirm). but here has been applied a reduction also, without limiting the turing-completeness expressivity.
 
-Historical notes:
+## (More) Applicative view of this project:
+Finite state machines (FSMs) are supported as they can be implemented with this system. Similarly any digital chip can be implemented (that would be of course an implementation that minimizes silica as all the logic gate's definitions are defined in memory, they are kind of executed in software).
+Please comprehend this design even if it does not fits exactly into something pre-existing.
+
+## Historical notes:
 The Hutter compression challenge made me think in stimulating ways about programs and posed a challenge which motivated my pursuit for understanding what intelligence, even in machines, is.
 During the years many side-tracks were born and the exploration path has proved to me to be noteworthy.
 Even if at present time I have not yet formulated an Hutter Challenge solution in terms of the shorter RedTM program code that produces the "goal data" (decompression, fine tuned algorithmically).
 
-Possible future developments:
+## Possible future developments:
+- implement Finite State Machines with it (and related hw chips)
 - code morphing for efficiency and/or security
 - data compression (links below)
 - VHDL for HW-based RedTM
@@ -23,7 +28,7 @@ Possible future developments:
 - spawing multiple cores is easy as cores are small and cheap!
 - optimizations (before-running and during-running) on a uniform computational system
 
-Links:
+##Links:
 * http://scottberkun.com/2013/ten-myths-of-innnovation/
 * 
 * https://en.wikipedia.org/wiki/Theory_of_computation
