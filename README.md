@@ -39,7 +39,8 @@ Links:
 * https://en.wikipedia.org/wiki/1-bit_architecture
 * 
 * https://en.wikipedia.org/wiki/Code_morphing
-*
+* https://en.wikipedia.org/wiki/Transmeta
+* 
 * http://prize.hutter1.net/
 * https://www.infoq.com/news/2016/09/facebook-zstandard-compression
 * 
