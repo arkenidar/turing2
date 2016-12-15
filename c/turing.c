@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 char memory[] = {0,0,0,0,0,0,0,0,0,0};
 
@@ -82,17 +81,17 @@ instruction_type instructions_or[] =	{
 #define BASE2 AND_OUT1+1
 #define AND_OUT2 BASE2+2
 instruction_type instructions_and[] =	{
-	
+
 	// NOT(X)
 	{ {BASE, COPY, IN}, {1,1} },
 	{ {BASE+1, COPY, BASE}, {2,2} },
 	{ {AND_OUT1, BASE, BASE+1}, {3,3} },
-	
+
 	// NOT(Y)
 	{ {BASE2, COPY, IN}, {4,4} },
 	{ {BASE2+1, COPY, BASE2}, {5,5} },
 	{ {AND_OUT2, BASE2, BASE2+1}, {6,6} },
-	
+
 	// OUT = AND(X,Y) = NOR(NOT(X), NOT(Y))
 	{ {OUT, AND_OUT1, AND_OUT2}, {EXIT,EXIT} }
 };
@@ -103,20 +102,20 @@ instruction_type instructions_and[] =	{
 #define AND_OUT2 BASE2+2
 #define BASE3 AND_OUT2+1
 instruction_type instructions_nand[] =	{
-	
+
 	// NOT(X)
 	{ {BASE, COPY, IN}, {1,1} },
 	{ {BASE+1, COPY, BASE}, {2,2} },
 	{ {AND_OUT1, BASE, BASE+1}, {3,3} },
-	
+
 	// NOT(Y)
 	{ {BASE2, COPY, IN}, {4,4} },
 	{ {BASE2+1, COPY, BASE2}, {5,5} },
 	{ {AND_OUT2, BASE2, BASE2+1}, {6,6} },
-	
+
 	// BASE3 = AND(X,Y) = NOR(NOT(X), NOT(Y))
 	{ {BASE3, AND_OUT1, AND_OUT2}, {7,7} },
-	
+
 	// OUT = NAND(X,Y) = NOT(AND(X,Y)) = NOT(BASE3)
 	{ {BASE3+1, COPY, BASE3}, {8,8} },
 	{ {OUT, BASE3, BASE3+1}, {EXIT,EXIT} }
@@ -126,8 +125,45 @@ instruction_type instructions_nand[] =	{
 // - use "program selector" to select which program to run in the RTM
 instruction_type* instructions = instructions_demo3;
 
+// ******************************************
+
+// console I/O utility
+
+#ifdef _WIN32
+#include <conio.h>
+char getch(){ return _getche(); }
+#endif
+
+#ifdef __linux__
+#include <unistd.h>
+#include <termios.h>
+char getch(){
+    char buf=0;
+    struct termios old={0};
+    fflush(stdout);
+    if(tcgetattr(0, &old)<0)
+        perror("tcsetattr()");
+    old.c_lflag&=~ICANON;
+    old.c_lflag&=~ECHO;
+    old.c_cc[VMIN]=1;
+    old.c_cc[VTIME]=0;
+    if(tcsetattr(0, TCSANOW, &old)<0)
+        perror("tcsetattr ICANON");
+    if(read(0,&buf,1)<0)
+        perror("read()");
+    old.c_lflag|=ICANON;
+    old.c_lflag|=ECHO;
+    if(tcsetattr(0, TCSADRAIN, &old)<0)
+        perror ("tcsetattr ~ICANON");
+    printf("%c",buf);
+    return buf;
+ }
+#endif
+
+// ******************************************
+
 int getbit(){
-	char ch = _getche();
+	char ch = getch();
 	if (ch=='0' || ch=='1') return ch-'0';
 	else if (ch=='q'){
 		printf(" } ");
@@ -149,7 +185,7 @@ int getinput(long* mapping, int index){
 void perform_operation(){
 	instruction_type instruction = instructions[current_op];
 	if(instruction.mapping[1]==COPY){
-		memory[instruction.mapping[0]] = getinput(instruction.mapping, 2);	
+		memory[instruction.mapping[0]] = getinput(instruction.mapping, 2);
 	} else {
 		memory[instruction.mapping[0]] = nor_op(
 			getinput(instruction.mapping, 1),
