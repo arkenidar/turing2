@@ -12,6 +12,6 @@
 #targetbinaryN_SOURCES = targetbinaryN.c
 
 bin_PROGRAMS = turing
-turing_SOURCES = c/turing.c
+turing_SOURCES = turing.c
 
 #AUTOMAKE_OPTIONS = subdir-objects
